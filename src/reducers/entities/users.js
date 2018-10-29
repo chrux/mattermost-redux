@@ -249,13 +249,9 @@ function profilesInChannel(state = {}, action) {
         const channelId = action.channelId;
         const userIds = Object.values(action.data.posts).map((post) => post.user_id);
 
-        // TODO: Exclude deleted?
-        // TODO: Parse system messages kicking users?
-
-        const a = { id: channelId, data: userIds.map((userId) => ({
-            id: userId,
-        }))};
-        console.log(a);
+        // Strictly speaking, a post is not proof that the user is still in the channel: they may 
+        // have left. However, if we are viewing a post as such, they are likely to still be 
+        // "in context", and are useful to mention as such.
 
         return profileListToSet(state, { id: channelId, data: userIds.map((userId) => ({
             id: userId,
