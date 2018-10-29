@@ -22,7 +22,7 @@ describe('Reducers.users', () => {
         it('UserTypes.RECEIVED_PROFILE_IN_CHANNEL, no existing profiles', () => {
             const state = {
                 profilesInChannel: {},
-            }
+            };
             const action = {
                 type: UserTypes.RECEIVED_PROFILE_IN_CHANNEL,
                 data: {
@@ -32,7 +32,7 @@ describe('Reducers.users', () => {
             };
             const expectedState = {
                 profilesInChannel: {
-                    'id': new Set().add('user_id'),
+                    id: new Set().add('user_id'),
                 },
             };
 
@@ -43,8 +43,8 @@ describe('Reducers.users', () => {
         it('UserTypes.RECEIVED_PROFILE_IN_CHANNEL, existing profiles', () => {
             const state = {
                 profilesInChannel: {
-                    'id': new Set().add('old_user_id'),
-                    'other_id': new Set().add('other_user_id'),
+                    id: new Set().add('old_user_id'),
+                    other_id: new Set().add('other_user_id'),
                 },
             };
             const action = {
@@ -56,8 +56,8 @@ describe('Reducers.users', () => {
             };
             const expectedState = {
                 profilesInChannel: {
-                    'id': new Set().add('old_user_id').add('user_id'),
-                    'other_id': new Set().add('other_user_id'),
+                    id: new Set().add('old_user_id').add('user_id'),
+                    other_id: new Set().add('other_user_id'),
                 },
             };
 
@@ -68,7 +68,7 @@ describe('Reducers.users', () => {
         it('UserTypes.RECEIVED_PROFILES_LIST_IN_CHANNEL, no existing profiles', () => {
             const state = {
                 profilesInChannel: {},
-            }
+            };
             const action = {
                 type: UserTypes.RECEIVED_PROFILES_LIST_IN_CHANNEL,
                 id: 'id',
@@ -83,7 +83,7 @@ describe('Reducers.users', () => {
             };
             const expectedState = {
                 profilesInChannel: {
-                    'id': new Set().add('user_id').add('user_id_2'),
+                    id: new Set().add('user_id').add('user_id_2'),
                 },
             };
 
@@ -94,10 +94,10 @@ describe('Reducers.users', () => {
         it('UserTypes.RECEIVED_PROFILES_LIST_IN_CHANNEL, existing profiles', () => {
             const state = {
                 profilesInChannel: {
-                    'id': new Set().add('old_user_id'),
-                    'other_id': new Set().add('other_user_id'),
+                    id: new Set().add('old_user_id'),
+                    other_id: new Set().add('other_user_id'),
                 },
-            }
+            };
             const action = {
                 type: UserTypes.RECEIVED_PROFILES_LIST_IN_CHANNEL,
                 id: 'id',
@@ -112,8 +112,8 @@ describe('Reducers.users', () => {
             };
             const expectedState = {
                 profilesInChannel: {
-                    'id': new Set().add('old_user_id').add('user_id').add('user_id_2'),
-                    'other_id': new Set().add('other_user_id'),
+                    id: new Set().add('old_user_id').add('user_id').add('user_id_2'),
+                    other_id: new Set().add('other_user_id'),
                 },
             };
 
@@ -124,22 +124,22 @@ describe('Reducers.users', () => {
         it('UserTypes.RECEIVED_PROFILES_IN_CHANNEL, no existing profiles', () => {
             const state = {
                 profilesInChannel: {},
-            }
+            };
             const action = {
                 type: UserTypes.RECEIVED_PROFILES_IN_CHANNEL,
                 id: 'id',
                 data: {
-                    'user_id': {
+                    user_id: {
                         id: 'user_id',
                     },
-                    'user_id_2': {
+                    user_id_2: {
                         id: 'user_id_2',
                     },
                 },
             };
             const expectedState = {
                 profilesInChannel: {
-                    'id': new Set().add('user_id').add('user_id_2'),
+                    id: new Set().add('user_id').add('user_id_2'),
                 },
             };
 
@@ -150,26 +150,26 @@ describe('Reducers.users', () => {
         it('UserTypes.RECEIVED_PROFILES_IN_CHANNEL, existing profiles', () => {
             const state = {
                 profilesInChannel: {
-                    'id': new Set().add('old_user_id'),
-                    'other_id': new Set().add('other_user_id'),
+                    id: new Set().add('old_user_id'),
+                    other_id: new Set().add('other_user_id'),
                 },
-            }
+            };
             const action = {
                 type: UserTypes.RECEIVED_PROFILES_IN_CHANNEL,
                 id: 'id',
                 data: {
-                    'user_id': {
+                    user_id: {
                         id: 'user_id',
                     },
-                    'user_id_2': {
+                    user_id_2: {
                         id: 'user_id_2',
                     },
                 },
             };
             const expectedState = {
                 profilesInChannel: {
-                    'id': new Set().add('old_user_id').add('user_id').add('user_id_2'),
-                    'other_id': new Set().add('other_user_id'),
+                    id: new Set().add('old_user_id').add('user_id').add('user_id_2'),
+                    other_id: new Set().add('other_user_id'),
                 },
             };
 
@@ -180,7 +180,7 @@ describe('Reducers.users', () => {
         it('UserTypes.RECEIVED_POSTS, no existing profiles', () => {
             const state = {
                 profilesInChannel: {},
-            }
+            };
             const action = {
                 type: PostTypes.RECEIVED_POSTS,
                 channelId: 'id',
@@ -197,7 +197,7 @@ describe('Reducers.users', () => {
             };
             const expectedState = {
                 profilesInChannel: {
-                    'id': new Set().add('user_id').add('user_id_2'),
+                    id: new Set().add('user_id').add('user_id_2'),
                 },
             };
 
@@ -208,10 +208,10 @@ describe('Reducers.users', () => {
         it('UserTypes.RECEIVED_POSTS, existing profiles', () => {
             const state = {
                 profilesInChannel: {
-                    'id': new Set().add('old_user_id'),
-                    'other_id': new Set().add('other_user_id'),
+                    id: new Set().add('old_user_id'),
+                    other_id: new Set().add('other_user_id'),
                 },
-            }
+            };
             const action = {
                 type: PostTypes.RECEIVED_POSTS,
                 channelId: 'id',
@@ -228,8 +228,8 @@ describe('Reducers.users', () => {
             };
             const expectedState = {
                 profilesInChannel: {
-                    'id': new Set().add('old_user_id').add('user_id').add('user_id_2'),
-                    'other_id': new Set().add('other_user_id'),
+                    id: new Set().add('old_user_id').add('user_id').add('user_id_2'),
+                    other_id: new Set().add('other_user_id'),
                 },
             };
 
@@ -240,10 +240,10 @@ describe('Reducers.users', () => {
         it('UserTypes.LOGOUT_SUCCESS, existing profiles', () => {
             const state = {
                 profilesInChannel: {
-                    'id': new Set().add('old_user_id'),
-                    'other_id': new Set().add('other_user_id'),
+                    id: new Set().add('old_user_id'),
+                    other_id: new Set().add('other_user_id'),
                 },
-            }
+            };
             const action = {
                 type: UserTypes.LOGOUT_SUCCESS,
             };
